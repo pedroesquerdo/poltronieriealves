@@ -1,5 +1,24 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const root = document.documentElement;
+const themeToggle = document.querySelector('.theme-toggle');
+
+function updateThemeUI() {
+  const isLight = root.dataset.theme === 'light';
+  themeToggle?.setAttribute('aria-label', isLight ? 'Alternar para tema escuro' : 'Alternar para tema claro');
+  themeToggle?.setAttribute('title', isLight ? 'Usar tema escuro' : 'Usar tema claro');
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
+    root.dataset.theme = nextTheme;
+    localStorage.setItem('theme', nextTheme);
+    updateThemeUI();
+  });
+  updateThemeUI();
+}
+
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 
