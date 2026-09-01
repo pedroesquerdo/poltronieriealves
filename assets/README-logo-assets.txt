@@ -1,0 +1,1 @@
+Logo assets on this site are web-optimized copies derived directly from the original logo image files provided by the client. No logo artwork is redrawn or recreated in CSS/SVG.
