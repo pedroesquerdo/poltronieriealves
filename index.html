@@ -10,14 +10,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark';</script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="Poltronieri & Alves - início">
-      <img class="brand-logo" src="assets/logo-horizontal-green.png" alt="Poltronieri & Alves Advogados Associados" />
+      <img class="brand-logo theme-logo theme-logo-dark" src="assets/logo-horizontal-white.png" alt="Poltronieri & Alves Advogados Associados" />
+      <img class="brand-logo theme-logo theme-logo-light" src="assets/logo-horizontal-green.png" alt="Poltronieri & Alves Advogados Associados" />
     </a>
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Alternar para tema claro" title="Alternar tema">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5 8.5 8.5 0 1 0 20.5 14.3Z"></path></svg>
+      </button>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
     <nav class="nav" aria-label="Navegação principal">
       <a href="#escritorio">O escritório</a>
       <a href="#atuacao">Áreas de atuação</a>
@@ -30,7 +38,8 @@
   <main>
     <section class="hero" id="inicio">
       <div class="hero-copy reveal">
-        <img class="hero-brand" src="assets/logo-stacked-green.png" alt="Poltronieri & Alves Advogados Associados" />
+        <img class="hero-brand theme-logo theme-logo-dark" src="assets/logo-stacked-white.png" alt="Poltronieri & Alves Advogados Associados" />
+        <img class="hero-brand theme-logo theme-logo-light" src="assets/logo-stacked-green.png" alt="Poltronieri & Alves Advogados Associados" />
         <span class="eyebrow">Especialista em Direito Agroambiental</span>
         <h1>Atuação jurídica estratégica para proteger patrimônio, direitos e relações essenciais.</h1>
         <p>Advocacia com atendimento humano e especializado, aliando técnica, proximidade e clareza nas áreas de Direito Agroambiental, Bancário, Previdenciário e de Família.</p>
@@ -43,14 +52,8 @@
 
     <section class="intro section" id="escritorio">
       <div class="section-heading">
-        <div>
-          <span class="section-label">O escritório</span>
-          <h2>Seriedade, proximidade e estratégia na condução de cada demanda.</h2>
-        </div>
-        <div class="section-text">
-          <p>A Poltronieri & Alves Advogados Associados oferece assessoria jurídica com abordagem técnica e acompanhamento próximo, sempre considerando o contexto, os objetivos e as necessidades específicas de cada cliente.</p>
-          <p>Nosso compromisso é orientar decisões, prevenir riscos, conduzir conflitos com segurança e buscar a solução mais adequada para cada situação.</p>
-        </div>
+        <div><span class="section-label">O escritório</span><h2>Seriedade, proximidade e estratégia na condução de cada demanda.</h2></div>
+        <div class="section-text"><p>A Poltronieri & Alves Advogados Associados oferece assessoria jurídica com abordagem técnica e acompanhamento próximo, sempre considerando o contexto, os objetivos e as necessidades específicas de cada cliente.</p><p>Nosso compromisso é orientar decisões, prevenir riscos, conduzir conflitos com segurança e buscar a solução mais adequada para cada situação.</p></div>
       </div>
       <div class="principles">
         <div><span>01</span><strong>Análise individualizada</strong><p>Cada caso é estudado de forma personalizada, com estratégia compatível com a realidade do cliente.</p></div>
@@ -61,144 +64,53 @@
 
     <section class="practice section" id="atuacao">
       <div class="section-heading">
-        <div>
-          <span class="section-label">Áreas de atuação</span>
-          <h2>Especialização e atuação multidisciplinar.</h2>
-        </div>
+        <div><span class="section-label">Áreas de atuação</span><h2>Especialização e atuação multidisciplinar.</h2></div>
         <p>Conhecimento jurídico aplicado à atividade rural, às relações financeiras, aos benefícios previdenciários e às relações familiares.</p>
       </div>
-
       <div class="practice-list">
-        <article class="practice-item featured reveal">
-          <div class="practice-number">01</div>
-          <div class="practice-content">
-            <span class="practice-kicker">Especialidade principal</span>
-            <h3>Direito Agroambiental</h3>
-            <p>Trabalhamos na defesa do produtor rural diante de embargos e autuações ambientais, desde o auto de infração até a liberação da área. Atuamos tanto no âmbito administrativo, com a apresentação de defesas e recursos perante os órgãos de fiscalização ambiental, quanto na esfera judicial. Em cada caso concreto, analisamos as alternativas disponíveis para definir a estratégia jurídica mais adequada e benéfica ao cliente.</p>
-          </div>
-        </article>
-
-        <article class="practice-item reveal">
-          <div class="practice-number">02</div>
-          <div class="practice-content">
-            <h3>Direito Bancário</h3>
-            <p>Analisamos toda a relação entre o cliente e as instituições financeiras, desde a contratação do crédito até a cobrança da dívida. A atuação abrange revisão de empréstimos, financiamentos e cédulas de crédito bancário, inclusive com questionamento de juros abusivos; defesa em ações de busca e apreensão, execução e cobrança; responsabilização do banco por fraudes, golpes e transferências não autorizadas; retirada de negativações irregulares; e repactuação de dívidas em situações de superendividamento.</p>
-          </div>
-        </article>
-
-        <article class="practice-item reveal">
-          <div class="practice-number">03</div>
-          <div class="practice-content">
-            <h3>Direito Previdenciário</h3>
-            <p>Acompanhamos o segurado desde o requerimento administrativo até a fase judicial, atuando na concessão, revisão e restabelecimento de benefícios do INSS, como aposentadorias, auxílio por incapacidade temporária, aposentadoria por incapacidade permanente, salário-maternidade e pensão por morte, além de BPC/LOAS ao idoso e à pessoa com deficiência, sempre buscando a alternativa mais vantajosa para cada cliente.</p>
-          </div>
-        </article>
-
-        <article class="practice-item reveal">
-          <div class="practice-number">04</div>
-          <div class="practice-content">
-            <h3>Direito de Família</h3>
-            <p>Atuamos em divórcios consensuais e litigiosos, reconhecimento e dissolução de união estável, partilha de bens, fixação, revisão e execução de pensão alimentícia, guarda e regulamentação do convívio entre pais e filhos, investigação de paternidade, adoção, reconhecimento de filiação socioafetiva, medidas protetivas em casos de violência doméstica, além de interdição e curatela. Em cada caso, buscamos a solução que melhor atenda aos interesses do cliente e de sua família.</p>
-          </div>
-        </article>
+        <article class="practice-item featured reveal"><div class="practice-number">01</div><div class="practice-content"><span class="practice-kicker">Especialidade principal</span><h3>Direito Agroambiental</h3><p>Trabalhamos na defesa do produtor rural diante de embargos e autuações ambientais, desde o auto de infração até a liberação da área. Atuamos tanto no âmbito administrativo, com a apresentação de defesas e recursos perante os órgãos de fiscalização ambiental, quanto na esfera judicial. Em cada caso concreto, analisamos as alternativas disponíveis para definir a estratégia jurídica mais adequada e benéfica ao cliente.</p></div></article>
+        <article class="practice-item reveal"><div class="practice-number">02</div><div class="practice-content"><h3>Direito Bancário</h3><p>Analisamos toda a relação entre o cliente e as instituições financeiras, desde a contratação do crédito até a cobrança da dívida. A atuação abrange revisão de empréstimos, financiamentos e cédulas de crédito bancário, inclusive com questionamento de juros abusivos; defesa em ações de busca e apreensão, execução e cobrança; responsabilização do banco por fraudes, golpes e transferências não autorizadas; retirada de negativações irregulares; e repactuação de dívidas em situações de superendividamento.</p></div></article>
+        <article class="practice-item reveal"><div class="practice-number">03</div><div class="practice-content"><h3>Direito Previdenciário</h3><p>Acompanhamos o segurado desde o requerimento administrativo até a fase judicial, atuando na concessão, revisão e restabelecimento de benefícios do INSS, como aposentadorias, auxílio por incapacidade temporária, aposentadoria por incapacidade permanente, salário-maternidade e pensão por morte, além de BPC/LOAS ao idoso e à pessoa com deficiência, sempre buscando a alternativa mais vantajosa para cada cliente.</p></div></article>
+        <article class="practice-item reveal"><div class="practice-number">04</div><div class="practice-content"><h3>Direito de Família</h3><p>Atuamos em divórcios consensuais e litigiosos, reconhecimento e dissolução de união estável, partilha de bens, fixação, revisão e execução de pensão alimentícia, guarda e regulamentação do convívio entre pais e filhos, investigação de paternidade, adoção, reconhecimento de filiação socioafetiva, medidas protetivas em casos de violência doméstica, além de interdição e curatela. Em cada caso, buscamos a solução que melhor atenda aos interesses do cliente e de sua família.</p></div></article>
       </div>
     </section>
 
-    <section class="statement" id="diferenciais">
-      <div class="statement-inner reveal">
-        <span class="section-label light">Nossa forma de atuar</span>
-        <blockquote>“Cada cliente merece uma análise cuidadosa, estratégia consistente e uma condução jurídica que concilie técnica, segurança e proximidade.”</blockquote>
-      </div>
-    </section>
+    <section class="statement" id="diferenciais"><div class="statement-inner reveal"><span class="section-label light">Nossa forma de atuar</span><blockquote>“Cada cliente merece uma análise cuidadosa, estratégia consistente e uma condução jurídica que concilie técnica, segurança e proximidade.”</blockquote></div></section>
 
     <section class="reviews section" id="avaliacoes">
-      <div class="reviews-head reveal">
-        <div>
-          <span class="section-label">Avaliações no Google</span>
-          <h2>Experiências compartilhadas por quem já contou com o escritório.</h2>
-        </div>
-        <div class="rating-summary" aria-label="Nota 5 de 5 em 22 avaliações">
-          <strong>5,0</strong>
-          <div>
-            <div class="rating-stars" aria-hidden="true">★★★★★</div>
-            <span>22 avaliações no Google</span>
-          </div>
-        </div>
-      </div>
-
+      <div class="reviews-head reveal"><div><span class="section-label">Avaliações no Google</span><h2>Experiências compartilhadas por quem já contou com o escritório.</h2></div><div class="rating-summary" aria-label="Nota 5 de 5 em 22 avaliações"><strong>5,0</strong><div><div class="rating-stars" aria-hidden="true">★★★★★</div><span>22 avaliações no Google</span></div></div></div>
       <div class="reviews-carousel reveal" aria-roledescription="carrossel" aria-label="Avaliações de clientes">
         <button class="carousel-button carousel-prev" type="button" aria-label="Avaliação anterior">←</button>
-        <div class="reviews-viewport">
-          <div class="reviews-track">
-            <article class="review-slide">
-              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-              <blockquote>“Competência e trabalho.”</blockquote>
-              <footer><strong>Douglas Gomes Oliveira</strong><span>Google Maps</span></footer>
-            </article>
-            <article class="review-slide">
-              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-              <blockquote>“Melhor atendimento ao cliente”</blockquote>
-              <footer><strong>dionera nutts</strong><span>Google Maps</span></footer>
-            </article>
-            <article class="review-slide">
-              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-              <blockquote>“Excelente escritório de advocacia, com atendimento humanizado, profissionais competentes e muito atenciosos.”</blockquote>
-              <footer><strong>Sandra Oliveira</strong><span>Google Maps</span></footer>
-            </article>
-            <article class="review-slide">
-              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-              <blockquote>“São excelentes Advogados, muito competentes e Atenciosos.”</blockquote>
-              <footer><strong>roselaine goncalves</strong><span>Google Maps</span></footer>
-            </article>
-            <article class="review-slide">
-              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-              <blockquote>“Profissionais extremamente sérios e competentes!”</blockquote>
-              <footer><strong>Felipe Giacchetto de Queiroz</strong><span>Google Maps</span></footer>
-            </article>
-            <article class="review-slide">
-              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-              <blockquote>“Atendimento rápido, seguro e muito eficiente. Recomendo o trabalho de toda a equipe.”</blockquote>
-              <footer><strong>Jaqueline Medeiros</strong><span>Google Maps</span></footer>
-            </article>
-          </div>
-        </div>
+        <div class="reviews-viewport"><div class="reviews-track">
+          <article class="review-slide"><div class="review-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“Competência e trabalho.”</blockquote><footer><strong>Douglas Gomes Oliveira</strong><span>Google Maps</span></footer></article>
+          <article class="review-slide"><div class="review-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“Melhor atendimento ao cliente”</blockquote><footer><strong>dionera nutts</strong><span>Google Maps</span></footer></article>
+          <article class="review-slide"><div class="review-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“Excelente escritório de advocacia, com atendimento humanizado, profissionais competentes e muito atenciosos.”</blockquote><footer><strong>Sandra Oliveira</strong><span>Google Maps</span></footer></article>
+          <article class="review-slide"><div class="review-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“São excelentes Advogados, muito competentes e Atenciosos.”</blockquote><footer><strong>roselaine goncalves</strong><span>Google Maps</span></footer></article>
+          <article class="review-slide"><div class="review-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“Profissionais extremamente sérios e competentes!”</blockquote><footer><strong>Felipe Giacchetto de Queiroz</strong><span>Google Maps</span></footer></article>
+          <article class="review-slide"><div class="review-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“Atendimento rápido, seguro e muito eficiente. Recomendo o trabalho de toda a equipe.”</blockquote><footer><strong>Jaqueline Medeiros</strong><span>Google Maps</span></footer></article>
+        </div></div>
         <button class="carousel-button carousel-next" type="button" aria-label="Próxima avaliação">→</button>
       </div>
-
-      <div class="reviews-footer reveal">
-        <div class="carousel-dots" aria-label="Navegação das avaliações"></div>
-        <a class="button button-link" href="https://www.google.com.br/maps/place/Poltronieri+%26+Alves+advogados/@-9.4622697,-59.2281042,14.71z/data=!4m18!1m9!3m8!1s0x93b3232e2f95b8a1:0x21c16306e943656!2sPoltronieri+%26+Alves+advogados!8m2!3d-9.4637153!4d-59.2229645!9m1!1b1!16s%2Fg%2F11zwmxw1gk!3m7!1s0x93b3232e2f95b8a1:0x21c16306e943656!8m2!3d-9.4637153!4d-59.2229645!9m1!1b1!16s%2Fg%2F11zwmxw1gk?hl=pt-BR&entry=ttu" target="_blank" rel="noopener noreferrer">Ver todas no Google →</a>
-      </div>
+      <div class="reviews-footer reveal"><div class="carousel-dots" aria-label="Navegação das avaliações"></div><a class="button button-link" href="https://www.google.com.br/maps/place/Poltronieri+%26+Alves+advogados/@-9.4622697,-59.2281042,14.71z/data=!4m18!1m9!3m8!1s0x93b3232e2f95b8a1:0x21c16306e943656!2sPoltronieri+%26+Alves+advogados!8m2!3d-9.4637153!4d-59.2229645!9m1!1b1!16s%2Fg%2F11zwmxw1gk!3m7!1s0x93b3232e2f95b8a1:0x21c16306e943656!8m2!3d-9.4637153!4d-59.2229645!9m1!1b1!16s%2Fg%2F11zwmxw1gk?hl=pt-BR&entry=ttu" target="_blank" rel="noopener noreferrer">Ver todas no Google →</a></div>
     </section>
 
     <section class="contact section" id="contato">
-      <div class="contact-copy">
-        <span class="section-label">Contato</span>
-        <h2>Converse com a Poltronieri & Alves.</h2>
-        <p>Entre em contato para atendimento, orientações iniciais e agendamento.</p>
-      </div>
+      <div class="contact-copy"><span class="section-label">Contato</span><h2>Converse com a Poltronieri & Alves.</h2><p>Entre em contato para atendimento, orientações iniciais e agendamento.</p></div>
       <div class="contact-details reveal">
         <p><strong>Telefone / WhatsApp</strong><br><a href="tel:+5566981568833">(66) 98156-8833</a></p>
         <p><strong>Endereço</strong><br><a href="https://www.google.com/maps/search/?api=1&query=Rua+Edino+Polles%2C+2746+-+Guariba%2C+Colniza+-+MT%2C+78335-000" target="_blank" rel="noopener noreferrer">Rua Edino Polles, 2746 - Guariba<br>Colniza - MT, 78335-000</a></p>
         <p><strong>Instagram</strong><br><a class="social-link" href="https://www.instagram.com/poltronieriealves.adv/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>@poltronieriealves.adv</a></p>
-        <div class="contact-actions">
-          <a class="button button-primary icon-button" href="https://wa.me/5566981568833" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4.1A8 8 0 1 1 20 11.7Z"></path><path d="M9.1 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.8c-.2.2-.1.4 0 .6.5.9 1.2 1.7 2.1 2.2.3.2.5.2.7-.1l.8-1c.2-.3.5-.3.8-.2l1.8.9c.3.1.5.3.5.5 0 .3-.1 1.4-.8 2-.6.5-1.4.8-2.3.6-1.2-.2-2.7-.8-4.3-2.2-1.8-1.6-2.9-3.5-3.2-4.8-.3-1.1 0-1.9.4-2.4.4-.4.9-.7 1.2-.7.2 0 .3 0 .5.1Z"></path></svg>Falar pelo WhatsApp</a>
-          <a class="button button-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Edino+Polles%2C+2746+-+Guariba%2C+Colniza+-+MT%2C+78335-000" target="_blank" rel="noopener noreferrer">Ver no Google Maps →</a>
-        </div>
+        <div class="contact-actions"><a class="button button-primary icon-button" href="https://wa.me/5566981568833" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4.1A8 8 0 1 1 20 11.7Z"></path><path d="M9.1 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.8c-.2.2-.1.4 0 .6.5.9 1.2 1.7 2.1 2.2.3.2.5.2.7-.1l.8-1c.2-.3.5-.3.8-.2l1.8.9c.3.1.5.3.5.5 0 .3-.1 1.4-.8 2-.6.5-1.4.8-2.3.6-1.2-.2-2.7-.8-4.3-2.2-1.8-1.6-2.9-3.5-3.2-4.8-.3-1.1 0-1.9.4-2.4.4-.4.9-.7 1.2-.7.2 0 .3 0 .5.1Z"></path></svg>Falar pelo WhatsApp</a><a class="button button-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Edino+Polles%2C+2746+-+Guariba%2C+Colniza+-+MT%2C+78335-000" target="_blank" rel="noopener noreferrer">Ver no Google Maps →</a></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <img class="footer-logo" src="assets/logo-shield-green.png" alt="" aria-hidden="true" />
-    <div class="footer-links">
-      <a class="social-link" href="https://www.instagram.com/poltronieriealves.adv/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>Instagram</a>
-      <a href="#avaliacoes">Avaliações</a>
-      <a class="social-link" href="https://wa.me/5566981568833" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4.1A8 8 0 1 1 20 11.7Z"></path><path d="M9.1 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.8c-.2.2-.1.4 0 .6.5.9 1.2 1.7 2.1 2.2.3.2.5.2.7-.1l.8-1c.2-.3.5-.3.8-.2l1.8.9c.3.1.5.3.5.5 0 .3-.1 1.4-.8 2-.6.5-1.4.8-2.3.6-1.2-.2-2.7-.8-4.3-2.2-1.8-1.6-2.9-3.5-3.2-4.8-.3-1.1 0-1.9.4-2.4.4-.4.9-.7 1.2-.7.2 0 .3 0 .5.1Z"></path></svg>WhatsApp</a>
-    </div>
+    <img class="footer-logo theme-logo theme-logo-dark" src="assets/logo-shield-white.png" alt="" aria-hidden="true" />
+    <img class="footer-logo theme-logo theme-logo-light" src="assets/logo-shield-green.png" alt="" aria-hidden="true" />
+    <div class="footer-links"><a class="social-link" href="https://www.instagram.com/poltronieriealves.adv/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>Instagram</a><a href="#avaliacoes">Avaliações</a><a class="social-link" href="https://wa.me/5566981568833" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
     <p>© <span id="year"></span> Poltronieri & Alves. Todos os direitos reservados.</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
