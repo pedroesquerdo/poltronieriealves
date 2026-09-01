@@ -49,9 +49,12 @@ const slides = Array.from(document.querySelectorAll('.review-slide'));
 const prev = document.querySelector('.carousel-prev');
 const next = document.querySelector('.carousel-next');
 const dotsContainer = document.querySelector('.carousel-dots');
+const carousel = document.querySelector('.reviews-carousel');
 
 if (track && slides.length && dotsContainer) {
   let current = 0;
+  let autoplayId = null;
+  const autoplayDelay = 2500;
 
   const dots = slides.map((_, index) => {
     const dot = document.createElement('button');
@@ -61,6 +64,7 @@ if (track && slides.length && dotsContainer) {
     dot.addEventListener('click', () => {
       current = index;
       updateCarousel();
+      restartAutoplay();
     });
     dotsContainer.appendChild(dot);
     return dot;
@@ -71,19 +75,42 @@ if (track && slides.length && dotsContainer) {
     dots.forEach((dot, index) => dot.classList.toggle('active', index === current));
   }
 
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    updateCarousel();
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayId = window.setInterval(nextSlide, autoplayDelay);
+  }
+
+  function stopAutoplay() {
+    if (autoplayId !== null) {
+      window.clearInterval(autoplayId);
+      autoplayId = null;
+    }
+  }
+
+  function restartAutoplay() {
+    startAutoplay();
+  }
+
   prev?.addEventListener('click', () => {
     current = (current - 1 + slides.length) % slides.length;
     updateCarousel();
+    restartAutoplay();
   });
 
   next?.addEventListener('click', () => {
-    current = (current + 1) % slides.length;
-    updateCarousel();
+    nextSlide();
+    restartAutoplay();
   });
 
   let startX = null;
   track.addEventListener('touchstart', event => {
     startX = event.touches[0].clientX;
+    stopAutoplay();
   }, { passive: true });
 
   track.addEventListener('touchend', event => {
@@ -97,7 +124,19 @@ if (track && slides.length && dotsContainer) {
       updateCarousel();
     }
     startX = null;
+    restartAutoplay();
   }, { passive: true });
 
+  carousel?.addEventListener('mouseenter', stopAutoplay);
+  carousel?.addEventListener('mouseleave', startAutoplay);
+  carousel?.addEventListener('focusin', stopAutoplay);
+  carousel?.addEventListener('focusout', startAutoplay);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopAutoplay();
+    else startAutoplay();
+  });
+
   updateCarousel();
+  startAutoplay();
 }
