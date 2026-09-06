@@ -21,6 +21,28 @@ if (themeToggle) {
   updateThemeUI();
 }
 
+const hero = document.querySelector('.hero');
+if (hero && !reducedMotion && window.matchMedia('(min-width: 761px)').matches) {
+  let ticking = false;
+
+  const updateHeroParallax = () => {
+    const rect = hero.getBoundingClientRect();
+    const progress = Math.max(-1, Math.min(1, -rect.top / Math.max(rect.height, 1)));
+    hero.style.setProperty('--hero-parallax', `${progress * 18}px`);
+    ticking = false;
+  };
+
+  const requestHeroParallax = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateHeroParallax);
+  };
+
+  window.addEventListener('scroll', requestHeroParallax, { passive: true });
+  window.addEventListener('resize', requestHeroParallax, { passive: true });
+  updateHeroParallax();
+}
+
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 
