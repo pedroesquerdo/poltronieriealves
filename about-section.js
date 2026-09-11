@@ -6,13 +6,13 @@ if (officeSection) {
   if (heading) {
     heading.classList.add('about-heading');
     heading.innerHTML = `
-      <div class="about-visual reveal">
+      <div class="about-visual">
         <div class="about-photo-frame">
           <img src="assets/maykel-e-poliana.png" alt="Maykel Alves e Poliana Poltronieri, advogados da Poltronieri & Alves" loading="lazy" decoding="async" />
         </div>
-        <p class="about-caption"><strong>Maykel Alves</strong><span>&</span><strong>Poliana Poltronieri</strong></p>
+        <p class="about-caption"><strong>Maykel Alves</strong><span>&amp;</span><strong>Poliana Poltronieri</strong></p>
       </div>
-      <div class="about-copy reveal">
+      <div class="about-copy">
         <span class="section-label">Quem somos</span>
         <h2>Advocacia próxima, estratégica e comprometida com cada cliente.</h2>
         <p>A Poltronieri & Alves é conduzida por <strong>Maykel Alves</strong> e <strong>Poliana Poltronieri</strong>, unindo atuação técnica, atendimento próximo e visão estratégica para oferecer soluções jurídicas adequadas à realidade de cada cliente.</p>
@@ -25,7 +25,7 @@ if (officeSection) {
   style.textContent = `
     .about-heading{display:grid!important;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)!important;gap:clamp(48px,7vw,104px)!important;align-items:center!important}
     .about-visual{min-width:0}
-    .about-photo-frame{position:relative;overflow:hidden;background:var(--surface);border-radius:2px}
+    .about-photo-frame{position:relative;overflow:hidden;background:var(--surface,transparent);border-radius:2px}
     .about-photo-frame::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.12);pointer-events:none}
     .about-photo-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
     .about-caption{display:flex;align-items:center;gap:12px;margin:18px 0 0;color:var(--heading);font:500 13px/1.4 Inter,Arial,sans-serif;letter-spacing:.035em}
