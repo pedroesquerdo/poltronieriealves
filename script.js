@@ -204,3 +204,8 @@ if (track && slides.length && dotsContainer) {
   updateAutoplayButton();
   startAutoplay();
 }
+
+const aboutSectionScript = document.createElement('script');
+aboutSectionScript.src = 'about-section.js';
+aboutSectionScript.defer = true;
+document.body.appendChild(aboutSectionScript);
